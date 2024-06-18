@@ -12,14 +12,26 @@
   display: block;
   padding: 0.625rem;
   font-size: 1.5rem;
+  position: relative;
+}
+.list .active p {
+  font-weight: 700;
+}
+
+.list .active::after {
+  display: block;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 90px;
+  background: #6a62b7;
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
 }
 
 .list li:hover {
   color: #6a62b7;
   cursor: pointer;
-}
-
-.active {
-  color: #6a62b7;
-  font-weight: bold;
 }

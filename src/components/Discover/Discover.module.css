@@ -32,3 +32,8 @@
   width: 3.5rem;
   height: 3.5rem;
 }
+
+.navigation__btns button:hover {
+  cursor: pointer;
+  color: #6a62b7;
+}

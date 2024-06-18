@@ -6,8 +6,9 @@
 }
 
 .App {
-  text-align: center;
   font-size: 16px;
+  max-width: 1440px;
+  width: 100%;
 }
 
 @font-face {
@@ -16,7 +17,7 @@
     url(../fonts/Satoshi/Satoshi-Regular.otf) format("opentype");
 }
 
-@font-face {
+/* @font-face {
   font-family: "Satoshi";
   font-weight: medium;
   src: local("Satoshi"),
@@ -35,4 +36,4 @@
   font-weight: black;
   src: local("Satoshi"),
     url(../fonts/Satoshi/Satoshi-Black.otf) format("opentype");
-}
+} */

@@ -1,0 +1,57 @@
+.hero {
+  padding: 8.25rem 7.5rem;
+}
+
+.hero__flexbox {
+  padding-top: 2.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5.875rem;
+}
+
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.hero__info h1 {
+  font-size: 6rem;
+  line-height: 6.875rem;
+}
+
+.hero__info p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-right: 12.75rem;
+  line-height: 160%;
+}
+
+.hero__img {
+  width: 27.8125rem;
+  height: 21.875rem;
+}
+
+.hero__btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background-color: #6a62b7;
+  color: white;
+  width: fit-content;
+}
+
+.hero__btn p {
+  font-size: 1.5rem;
+}
+
+.hero__btn img {
+  background: transparent;
+}

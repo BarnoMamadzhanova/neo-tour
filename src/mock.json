@@ -1,38 +1,32 @@
 [
   {
-    "image": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/8I37NtDffNV7AZlDa7uDvvqhovU.jpg",
-    "title": "Avatar: The Way of Water",
-    "interval": 1500,
+    "image": "https://cdn.pixabay.com/photo/2024/02/23/21/25/landscape-8592826_1280.jpg",
+    "title": "Mount Fuji",
     "id": 1
   },
   {
-    "image": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
-    "title": "Black Adam",
-    "interval": 1500,
+    "image": "https://cdn.pixabay.com/photo/2024/03/04/14/56/pagoda-8612554_1280.jpg",
+    "title": "Mount Fuji",
     "id": 2
   },
   {
-    "image": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/yYrvN5WFeGYjJnRzhY0QXuo4Isw.jpg",
-    "title": "Black Panther",
-    "interval": 2500,
+    "image": "https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_1280.png",
+    "title": "Mount Fuji",
     "id": 3
   },
   {
-    "image": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/8I37NtDffNV7AZlDa7uDvvqhovU.jpg",
-    "title": "Avatar: The Way of Water",
-    "interval": 1500,
+    "image": "https://cdn.pixabay.com/photo/2023/05/18/09/28/monastery-8001787_1280.jpg",
+    "title": "Mount Fuji",
     "id": 4
   },
   {
-    "image": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
-    "title": "Black Adam",
-    "interval": 1500,
+    "image": "https://cdn.pixabay.com/photo/2023/12/20/07/04/sunset-8459057_1280.jpg",
+    "title": "Mount Fuji",
     "id": 5
   },
   {
-    "image": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/yYrvN5WFeGYjJnRzhY0QXuo4Isw.jpg",
-    "title": "Black Panther",
-    "interval": 2500,
+    "image": "https://cdn.pixabay.com/photo/2019/05/29/20/01/sunset-4238445_1280.jpg",
+    "title": "Mount Fuji",
     "id": 6
   }
 ]

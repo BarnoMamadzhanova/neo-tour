@@ -18,11 +18,6 @@ export const Carousel = forwardRef(({ slides }, ref) => {
             className={classes.slide__box}
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-            {/* <img
-              src={slide.image}
-              alt={slide.title}
-              className={classes.slide__image}
-            /> */}
             <div className={classes.slider__title_bg}>
               <h3>{slide.title}</h3>
             </div>

@@ -1,5 +1,6 @@
 .slide__box {
   position: relative;
+  margin: 2rem 0 3.75rem;
 }
 
 .slide__box img {

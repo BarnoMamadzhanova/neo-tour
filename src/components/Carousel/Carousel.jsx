@@ -10,7 +10,6 @@ export const Carousel = ({ slides }) => {
       spaceBetween={24}
       slidesPerView={3}
       navigation
-      // https://github.com/nolimits4web/swiper/discussions/6039
     >
       {slides.map((slide) => (
         <SwiperSlide key={slide.id}>

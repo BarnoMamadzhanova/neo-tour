@@ -1,6 +1,7 @@
+import React from "react";
 import classes from "./Categories.module.css";
 
-export const Categories = ({ categories }) => {
+export const Categories = ({ categories = [] }) => {
   return (
     <ul className={classes.list}>
       {categories.map((category) => (

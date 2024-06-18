@@ -13,3 +13,22 @@
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
+
+.discover__navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation__btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navigation__btns button {
+  outline: none;
+  border: none;
+  width: 3.5rem;
+  height: 3.5rem;
+}

@@ -1,11 +1,15 @@
-/* .hero {
-    background-image: linear-gradient(180deg, #d0cbff, #d0cbff00);
-    min-height: 100vh;
-    display: flex;
-  } */
+.discover {
+  margin-block: 3rem;
+}
 
 .container {
   max-width: 1440px;
-  margin: auto;
+  margin: 0 auto;
   padding-inline: 7.5rem;
+}
+
+.container h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }

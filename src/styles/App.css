@@ -13,5 +13,26 @@
 @font-face {
   font-family: "Satoshi";
   src: local("Satoshi"),
-    url(../components/fonts/Satoshi/Satoshi-Regular.otf) format("opentype");
+    url(../fonts/Satoshi/Satoshi-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  font-weight: medium;
+  src: local("Satoshi"),
+    url(../fonts/Satoshi/Satoshi-Medium.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  font-weight: bold;
+  src: local("Satoshi"),
+    url(../fonts/Satoshi/Satoshi-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Satoshi";
+  font-weight: black;
+  src: local("Satoshi"),
+    url(../fonts/Satoshi/Satoshi-Black.otf) format("opentype");
 }

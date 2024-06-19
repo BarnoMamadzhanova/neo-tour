@@ -22,10 +22,12 @@ function Discover() {
     setFilteredSlides(filtered);
   }, [selectedCategory]);
 
+  // Function to handle previous btn on slider
   const handlePrevClick = () => {
     swiperRef.current.swiper.slidePrev();
   };
 
+  // Function to handle next btn on slider
   const handleNextClick = () => {
     swiperRef.current.swiper.slideNext();
   };

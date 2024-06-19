@@ -1,17 +1,22 @@
 [
   {
-    "title": "Popular"
+    "title": "Popular",
+    "path": "popular"
   },
   {
-    "title": "Featured"
+    "title": "Featured",
+    "path": "featured"
   },
   {
-    "title": "Most Visited"
+    "title": "Most Visited",
+    "path": "most_visited"
   },
   {
-    "title": "Europe"
+    "title": "Europe",
+    "path": "europe"
   },
   {
-    "title": "Asia"
+    "title": "Asia",
+    "path": "asia"
   }
 ]

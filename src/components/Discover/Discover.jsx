@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import classes from "./Discover.module.css";
 import slides from "../../mock.json";
 import categories from "../../categories.json";
@@ -8,7 +9,18 @@ import prev from "../../assets/prevBtn.svg";
 import next from "../../assets/nextBtn.svg";
 
 function Discover() {
+  const [selectedCategory, setSelectedCategory] = useState(categories[0].path);
+  const [filteredSlides, setFilteredSlides] = useState([]);
   const swiperRef = useRef(null);
+  const history = useHistory();
+
+  useEffect(() => {
+    // Filter slides based on the selected category
+    const filtered = slides.filter(
+      (slide) => slide.category === selectedCategory
+    );
+    setFilteredSlides(filtered);
+  }, [selectedCategory]);
 
   const handlePrevClick = () => {
     swiperRef.current.swiper.slidePrev();
@@ -18,24 +30,13 @@ function Discover() {
     swiperRef.current.swiper.slideNext();
   };
 
-  //   const handleSlideChange = (swiper) => {
-  //     document.querySelectorAll(`.${classes.slide__image}`).forEach((img) => {
-  //       img.style.border = "none";
-  //     });
-  //     // Add border to the active slide
-  //     const activeSlide = swiper.slides[swiper.activeIndex].querySelector(
-  //       `.${classes.slide__image}`
-  //     );
-  //     if (activeSlide) {
-  //       activeSlide.style.border = "1px solid black";
-  //     }
-  //   };
+  const handleCategoryClick = (categoryPath) => {
+    setSelectedCategory(categoryPath);
+  };
 
-  //   useEffect(() => {
-  //     if (swiperRef.current && swiperRef.current.swiper) {
-  //       handleSlideChange(swiperRef.current.swiper);
-  //     }
-  //   }, []);
+  const handleSlideClick = (slideId) => {
+    history.push(`/details/${slideId}`);
+  };
 
   return (
     <section className={classes.discover}>
@@ -62,8 +63,15 @@ function Discover() {
           </div>
         </div>
 
-        <Categories categories={categories} />
-        <Carousel ref={swiperRef} slides={slides} />
+        <Categories
+          categories={categories}
+          onCategoryClick={handleCategoryClick}
+        />
+        <Carousel
+          ref={swiperRef}
+          slides={filteredSlides}
+          onSlideClick={handleSlideClick}
+        />
       </div>
     </section>
   );

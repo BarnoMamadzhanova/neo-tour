@@ -8,13 +8,15 @@
   margin-bottom: 2rem;
 }
 
-.list li {
+.link {
+  text-decoration: none;
+  color: black;
   display: block;
   padding: 0.625rem;
   font-size: 1.5rem;
   position: relative;
 }
-.list .active p {
+.list .active Link {
   font-weight: 700;
 }
 

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import classes from "./Discover.module.css";
 import slides from "../../mock.json";
 import categories from "../../categories.json";
@@ -12,7 +12,7 @@ function Discover() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0].path);
   const [filteredSlides, setFilteredSlides] = useState([]);
   const swiperRef = useRef(null);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Filter slides based on the selected category
@@ -35,7 +35,7 @@ function Discover() {
   };
 
   const handleSlideClick = (slideId) => {
-    history.push(`/details/${slideId}`);
+    navigate(`/details/${slideId}`);
   };
 
   return (

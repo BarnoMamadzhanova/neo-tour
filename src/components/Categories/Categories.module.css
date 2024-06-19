@@ -16,8 +16,15 @@
   font-size: 1.5rem;
   position: relative;
 }
-.list .active Link {
+
+.list li:hover {
+  color: #6a62b7;
+  cursor: pointer;
+}
+
+.list .active p {
   font-weight: 700;
+  color: #6a62b7;
 }
 
 .list .active::after {
@@ -31,9 +38,4 @@
   position: absolute;
   left: 50%;
   bottom: -10px;
-}
-
-.list li:hover {
-  color: #6a62b7;
-  cursor: pointer;
 }

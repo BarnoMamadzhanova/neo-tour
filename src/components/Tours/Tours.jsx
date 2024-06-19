@@ -1,5 +1,19 @@
 import React from "react";
+import classes from "./Tours.module.css";
+import location from "../../assets/location.svg";
 
 export const Tours = ({ tour }) => {
-  return <div></div>;
+  return (
+    <div className={classes.tour}>
+      <h2>{tour.title}</h2>
+      <div className={classes.location}>
+        <img src={location} alt={tour.location} />
+        <p>{tour.location}</p>
+      </div>
+      <div className={classes.info__box}>
+        <h5>Description</h5>
+        <p>{tour.description}</p>
+      </div>
+    </div>
+  );
 };

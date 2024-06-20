@@ -7,8 +7,14 @@
 .input_phone {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   color: #888888;
+}
+
+.phone_input {
+  padding: 1rem;
+  border-radius: 3rem;
+  border: 1px solid #ccc;
 }
 
 .input_commentaries {
@@ -18,12 +24,51 @@
   color: #888888;
 }
 
-.input_phone input {
+.input_commentaries input {
   padding: 1.25rem;
   border-radius: 3rem;
 }
 
-.input_commentaries input {
+/* .input_phone input {
   padding: 1.25rem;
   border-radius: 3rem;
+} */
+
+.participants {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #888888;
+}
+
+.participant_controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.participant_controls button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.participant_controls span {
+  font-size: 1.5rem;
+}
+
+.participant_controls div {
+  margin-left: 1rem;
+  color: #888888;
+}
+
+button[type="submit"] {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 3rem;
+  background-color: #6a62b7;
+  color: white;
+  cursor: pointer;
 }

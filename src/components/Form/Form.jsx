@@ -4,7 +4,7 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import classes from "./Form.module.css";
 
-function Form() {
+function Form({ setActive, onSubmitSuccess, onSubmitError }) {
   const { register, handleSubmit, setValue, watch } = useForm();
   const [phoneNumber, setPhoneNumber] = useState("");
   const participants = watch("participants", 1);

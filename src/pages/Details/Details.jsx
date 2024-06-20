@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Details.module.css";
 import { useParams, useNavigate } from "react-router-dom";
 import slides from "../../mock.json";
@@ -6,11 +6,13 @@ import { Tours } from "../../components/Tours/Tours";
 import Reviews from "../../components/Reviews/Reviews";
 import reviews from "../../reviews.json";
 import goBack from "../../assets/goBackBtn.svg";
+import Modal from "../../components/Modal/Modal";
 
 function Details() {
   const { id } = useParams();
   const navigate = useNavigate();
   const tour = slides.find((slide) => slide.id === parseInt(id));
+  const [modalActive, setModalActive] = useState(false);
 
   if (!tour) {
     return <div>Tour not found</div>;
@@ -34,7 +36,15 @@ function Details() {
       <div className={classes.container}>
         <Tours tour={tour} />
         <Reviews reviews={tourReviews} />
-        <button className={classes.booking__btn}>Book now</button>
+        <button
+          className={classes.booking__btn}
+          onClick={() => setModalActive(true)}
+        >
+          Book now
+        </button>
+        <Modal active={modalActive} setActive={setModalActive}>
+          <p>This is form</p>
+        </Modal>
       </div>
     </div>
   );

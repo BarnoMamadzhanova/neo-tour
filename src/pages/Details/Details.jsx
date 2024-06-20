@@ -7,6 +7,7 @@ import Reviews from "../../components/Reviews/Reviews";
 import reviews from "../../reviews.json";
 import goBack from "../../assets/goBackBtn.svg";
 import Modal from "../../components/Modal/Modal";
+import Form from "../../components/Form/Form";
 
 function Details() {
   const { id } = useParams();
@@ -43,7 +44,12 @@ function Details() {
           Book now
         </button>
         <Modal active={modalActive} setActive={setModalActive}>
-          <p>This is form</p>
+          <h2 className={classes.modal__info}>Info</h2>
+          <p className={classes.modal__text}>
+            To submit an application for a tour reservation, you need to fill in
+            your information and select the number of people for the reservation
+          </p>
+          <Form />
         </Modal>
       </div>
     </div>

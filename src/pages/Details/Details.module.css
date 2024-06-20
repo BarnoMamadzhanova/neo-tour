@@ -63,3 +63,16 @@
   background-color: #6b62b7df;
   cursor: pointer;
 }
+
+.modal__info {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 4rem;
+  margin-bottom: 1.25rem;
+}
+
+.modal__text {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}

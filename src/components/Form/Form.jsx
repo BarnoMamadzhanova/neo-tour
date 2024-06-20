@@ -6,7 +6,9 @@ import "react-phone-number-input/style.css";
 import classes from "./Form.module.css";
 
 function Form({ setActive, onSubmitSuccess, onSubmitError }) {
-  const { register, handleSubmit, setValue, watch } = useForm();
+  const { register, handleSubmit, setValue, watch } = useForm({
+    defaultValues: { participants: 1 },
+  });
   const [phoneNumber, setPhoneNumber] = useState("");
   const participants = watch("participants", 1);
 
@@ -60,11 +62,21 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
       <label htmlFor="participants" className={classes.participants}>
         Number of participants
         <div className={classes.participant_controls}>
-          <button type="button" onClick={() => handleParticipantsChange(false)}>
+          <button
+            type="button"
+            onClick={() => handleParticipantsChange(false)}
+            disabled={participants === 1}
+            className={participants === 1 ? classes.disabled_button : ""}
+          >
             -
           </button>
           <span>{participants}</span>
-          <button type="button" onClick={() => handleParticipantsChange(true)}>
+          <button
+            type="button"
+            onClick={() => handleParticipantsChange(true)}
+            disabled={participants === 6}
+            className={participants === 6 ? classes.disabled_button : ""}
+          >
             +
           </button>
           <div>
@@ -77,7 +89,9 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
           {...register("participants", { required: true })}
         />
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit" disabled={!phoneNumber}>
+        Submit
+      </button>
     </form>
   );
 }

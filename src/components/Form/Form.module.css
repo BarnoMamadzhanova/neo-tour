@@ -50,9 +50,20 @@
 .participant_controls button {
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 50%;
-  background-color: #ccc;
+  border-radius: 5px;
+  background-color: #897cff;
+  color: white;
   cursor: pointer;
+}
+
+.participant_controls button:disabled {
+  background-color: #b4b0da;
+  cursor: auto;
+}
+
+.disabled_button {
+  background-color: #b4b0da !important;
+  cursor: auto !important;
 }
 
 .participant_controls span {

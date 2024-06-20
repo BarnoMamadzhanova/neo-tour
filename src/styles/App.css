@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+/* body {
+  overflow-x: hidden;
+} */
+
 @font-face {
   font-family: "Satoshi";
   src: local("Satoshi"),

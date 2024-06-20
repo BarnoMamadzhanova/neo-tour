@@ -6,13 +6,18 @@ export const Reviews = ({ reviews }) => {
     <>
       {reviews && reviews.length > 0 ? (
         <div className={classes.reviews}>
-          {reviews.map((review) => (
-            <div key={review.id} className="user__info">
-              <img src={review.userFoto} alt={review.userName} />
-              <h6>{review.userName}</h6>
-              <p>{review.text}</p>
-            </div>
-          ))}
+          <h3 className={classes.reviews__title}>Reviews</h3>
+          <div className={classes.container}>
+            {reviews.map((review) => (
+              <div key={review.id} className={classes.user__info}>
+                <div className={classes.user__flex}>
+                  <img src={review.userFoto} alt={review.userName} />
+                  <h6>{review.userName}</h6>
+                </div>
+                <p>{review.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       ) : (
         ""

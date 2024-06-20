@@ -26,7 +26,7 @@
   z-index: 0;
 }
 
-h3 {
+.slider__title_bg h3 {
   position: absolute;
   color: #ffffff;
   bottom: 1rem;

@@ -5,6 +5,7 @@ import slides from "../../mock.json";
 import { Tours } from "../../components/Tours/Tours";
 import Reviews from "../../components/Reviews/Reviews";
 import reviews from "../../reviews.json";
+import goBack from "../../assets/goBackBtn.svg";
 
 function Details() {
   const { id } = useParams();
@@ -20,16 +21,20 @@ function Details() {
 
   return (
     <div className={classes.details}>
-      <div className="hero">
-        <img src={tour.image} alt={tour.title} />
-        <button onClick={() => navigate(-1)}>Go back</button>
+      <div
+        className={classes.hero}
+        style={{ backgroundImage: `url(${tour.image})` }}
+      >
+        <button onClick={() => navigate(-1)} className={classes.back__btn}>
+          <img src={goBack} alt="Home" />
+          <p>Go back</p>
+        </button>
       </div>
 
-      <div className="container">
+      <div className={classes.container}>
         <Tours tour={tour} />
-        <h3>Reviews</h3>
         <Reviews reviews={tourReviews} />
-        <button>Book now</button>
+        <button className={classes.booking__btn}>Book now</button>
       </div>
     </div>
   );

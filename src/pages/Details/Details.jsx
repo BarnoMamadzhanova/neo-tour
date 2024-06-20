@@ -14,6 +14,7 @@ function Details() {
   const navigate = useNavigate();
   const tour = slides.find((slide) => slide.id === parseInt(id));
   const [modalActive, setModalActive] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
 
   if (!tour) {
     return <div>Tour not found</div>;
@@ -21,6 +22,23 @@ function Details() {
 
   // Filter reviews based on the tour ID
   const tourReviews = reviews.filter((review) => review.id === tour.id);
+
+  const handleBookingSuccess = () => {
+    setModalMessage("Your trip has been booked!");
+    setModalActive(true);
+  };
+
+  const handleBookingError = () => {
+    setModalMessage("The tour can’t be booked");
+    setModalActive(true);
+  };
+
+  const handleModalClose = () => {
+    setModalActive(false);
+    if (modalMessage === "Your trip has been booked!") {
+      navigate("/");
+    }
+  };
 
   return (
     <div className={classes.details}>
@@ -43,14 +61,30 @@ function Details() {
         >
           Book now
         </button>
-        <Modal active={modalActive} setActive={setModalActive}>
-          <h2 className={classes.modal__info}>Info</h2>
-          <p className={classes.modal__text}>
-            To submit an application for a tour reservation, you need to fill in
-            your information and select the number of people for the reservation
-          </p>
-          <Form />
-        </Modal>
+        {modalActive && (
+          <Modal active={modalActive} setActive={setModalActive}>
+            {modalMessage ? (
+              <>
+                <p>{modalMessage}</p>
+                <button onClick={handleModalClose}>Ok</button>
+              </>
+            ) : (
+              <>
+                <h2 className={classes.modal__info}>Info</h2>
+                <p className={classes.modal__text}>
+                  To submit an application for a tour reservation, you need to
+                  fill in your information and select the number of people for
+                  the reservation
+                </p>
+                <Form
+                  setActive={setModalActive}
+                  onSubmitSuccess={handleBookingSuccess}
+                  onSubmitError={handleBookingError}
+                />
+              </>
+            )}
+          </Modal>
+        )}
       </div>
     </div>
   );

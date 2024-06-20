@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+// import axios from "axios";
 import classes from "./Form.module.css";
 
 function Form({ setActive, onSubmitSuccess, onSubmitError }) {
@@ -11,7 +12,23 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
 
   const onSubmit = (data) => {
     console.log({ ...data, phone_number: phoneNumber });
+    onSubmitSuccess();
+    // onSubmitError();
   };
+
+  //   const onSubmit = (data) => {
+  //     axios
+  //       .post("http://your-backend-url.com/book", {
+  //         ...data,
+  //         phone_number: phoneNumber,
+  //       })
+  //       .then((response) => {
+  //         onSubmitSuccess();
+  //       })
+  //       .catch((error) => {
+  //         onSubmitError();
+  //       });
+  //   };
 
   const handleParticipantsChange = (increment) => {
     const newValue = increment

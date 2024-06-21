@@ -5,6 +5,7 @@ import "react-phone-number-input/style.css";
 // import axios from "axios";
 import classes from "./Form.module.css";
 import user from "../../assets/user.svg";
+import useBookingId from "../../hooks/useBookingId";
 
 function Form({ setActive, onSubmitSuccess, onSubmitError }) {
   const { register, handleSubmit, setValue, watch } = useForm({
@@ -12,9 +13,10 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
   });
   const [phoneNumber, setPhoneNumber] = useState("");
   const participants = watch("participants", 1);
+  const bookingId = useBookingId();
 
   const onSubmit = (data) => {
-    console.log({ ...data, phone_number: phoneNumber });
+    console.log({ ...data, phone_number: phoneNumber, booking_id: bookingId });
     onSubmitSuccess();
     // onSubmitError();
   };
@@ -24,6 +26,7 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
   //       .post("https://..., {
   //         ...data,
   //         phone_number: phoneNumber,
+  //         booking_id: bookingId,
   //       })
   //       .then((response) => {
   //         onSubmitSuccess();
@@ -50,12 +53,14 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
           value={phoneNumber}
           onChange={(value) => setPhoneNumber(value)}
           className={classes.phone_input}
+          id="phone_number"
         />
       </label>
       <label htmlFor="commentaries" className={classes.input_commentaries}>
         Commentaries to trip
         <input
           type="text"
+          id="commentaries"
           placeholder="Write your wishes to trip..."
           {...register("commentaries")}
         />
@@ -87,6 +92,7 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
         </div>
         <input
           type="hidden"
+          id="participants"
           value={participants}
           {...register("participants", { required: true })}
         />

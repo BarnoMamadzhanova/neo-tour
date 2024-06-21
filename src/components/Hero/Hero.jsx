@@ -3,7 +3,7 @@ import hero from "../../assets/hero.svg";
 import arrow from "../../assets/arrowBtn.svg";
 import classes from "./Hero.module.css";
 
-function Hero() {
+function Hero({ scrollToDiscover }) {
   return (
     <section className={classes.hero}>
       <div className={classes.container}>
@@ -19,10 +19,10 @@ function Hero() {
             <img src={hero} alt="Hero" />
           </div>
         </div>
-        <div className={classes.hero__btn}>
+        <button className={classes.hero__btn} onClick={scrollToDiscover}>
           <p>Let’s Go!</p>
           <img src={arrow} alt="Arrow" />
-        </div>
+        </button>
       </div>
     </section>
   );

@@ -54,6 +54,8 @@
   background-color: #6a62b7;
   color: white;
   width: fit-content;
+  border: none;
+  outline: none;
 }
 
 .hero__btn:hover {

@@ -4,6 +4,12 @@
   gap: 1rem;
 }
 
+input[type="tel"],
+input[type="tel"]:focus-visible {
+  border: none;
+  outline: none;
+}
+
 .input_phone {
   display: flex;
   flex-direction: column;

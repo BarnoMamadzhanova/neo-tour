@@ -4,6 +4,7 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 // import axios from "axios";
 import classes from "./Form.module.css";
+import user from "../../assets/user.svg";
 
 function Form({ setActive, onSubmitSuccess, onSubmitError }) {
   const { register, handleSubmit, setValue, watch } = useForm({
@@ -79,7 +80,8 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
           >
             +
           </button>
-          <div>
+          <div className={classes.participants__number}>
+            <img src={user} alt="user" />
             {participants} {participants === 1 ? "person" : "people"}
           </div>
         </div>
@@ -89,7 +91,11 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
           {...register("participants", { required: true })}
         />
       </label>
-      <button type="submit" disabled={!phoneNumber}>
+      <button
+        type="submit"
+        disabled={!phoneNumber}
+        onClick={handleSubmit(onSubmit)}
+      >
         Submit
       </button>
     </form>

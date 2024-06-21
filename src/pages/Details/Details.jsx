@@ -8,6 +8,7 @@ import reviews from "../../reviews.json";
 import goBack from "../../assets/goBackBtn.svg";
 import Modal from "../../components/Modal/Modal";
 import Form from "../../components/Form/Form";
+import closeBtn from "../../assets/close.svg";
 
 function Details() {
   const { id } = useParams();
@@ -65,17 +66,25 @@ function Details() {
           <Modal active={modalActive} setActive={setModalActive}>
             {modalMessage ? (
               <>
-                <p>{modalMessage}</p>
-                <button onClick={handleModalClose}>Ok</button>
+                <div className={classes.modal__message}>
+                  <p>{modalMessage}</p>
+                  <button onClick={handleModalClose}>Ok</button>
+                </div>
               </>
             ) : (
               <>
-                <h2 className={classes.modal__info}>Info</h2>
-                <p className={classes.modal__text}>
-                  To submit an application for a tour reservation, you need to
-                  fill in your information and select the number of people for
-                  the reservation
-                </p>
+                <div className={classes.modal__info}>
+                  <div className={classes.modal__title}>
+                    <h2>Info</h2>
+                    <img src={closeBtn} alt="x" onClick={handleModalClose} />
+                  </div>
+                  <p className={classes.modal__text}>
+                    To submit an application for a tour reservation, you need to
+                    fill in your information and select the number of people for
+                    the reservation
+                  </p>
+                </div>
+
                 <Form
                   setActive={setModalActive}
                   onSubmitSuccess={handleBookingSuccess}

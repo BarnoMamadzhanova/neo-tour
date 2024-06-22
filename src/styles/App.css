@@ -11,33 +11,30 @@
   width: 100%;
 }
 
-/* body {
-  overflow-x: hidden;
-} */
-
 @font-face {
   font-family: "Satoshi";
+  font-weight: 400; /* Regular */
   src: local("Satoshi"),
     url(../fonts/Satoshi/Satoshi-Regular.otf) format("opentype");
 }
 
-/* @font-face {
+@font-face {
   font-family: "Satoshi";
-  font-weight: medium;
+  font-weight: 500; /* Medium */
   src: local("Satoshi"),
     url(../fonts/Satoshi/Satoshi-Medium.otf) format("opentype");
 }
 
 @font-face {
   font-family: "Satoshi";
-  font-weight: bold;
+  font-weight: 700; /* Bold */
   src: local("Satoshi"),
     url(../fonts/Satoshi/Satoshi-Bold.otf) format("opentype");
 }
 
 @font-face {
   font-family: "Satoshi";
-  font-weight: black;
+  font-weight: 900; /* Black */
   src: local("Satoshi"),
     url(../fonts/Satoshi/Satoshi-Black.otf) format("opentype");
-} */
+}

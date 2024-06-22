@@ -7,12 +7,28 @@ import { Carousel } from "../Carousel/Carousel";
 import { Categories } from "../Categories/Categories";
 import prev from "../../assets/prevBtn.svg";
 import next from "../../assets/nextBtn.svg";
+// import api from "../../api/api";
 
 function Discover() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0].path);
   const [filteredSlides, setFilteredSlides] = useState([]);
   const swiperRef = useRef(null);
   const navigate = useNavigate();
+  // const [discoverData, setDiscoverData] = useState([]);
+
+  // Blueprint if i get api
+  // useEffect(() => {
+  //   const fetchDiscoverData = async () => {
+  //     try {
+  //       const response = await api.get("/discover");
+  //       setDiscoverData(response.data);
+  //     } catch (error) {
+  //       console.error("Error fetching discover data", error);
+  //     }
+  //   };
+
+  //   fetchDiscoverData();
+  // }, []);
 
   useEffect(() => {
     // Filter slides based on the selected category
@@ -72,6 +88,7 @@ function Discover() {
         <Carousel
           ref={swiperRef}
           slides={filteredSlides}
+          // discoverData={discoverData}
           onSlideClick={handleSlideClick}
         />
       </div>

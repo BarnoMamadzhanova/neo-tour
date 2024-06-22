@@ -45,3 +45,17 @@
   font-size: 1.125rem;
   line-height: 1.375rem;
 }
+
+/* Media query for max-width 7680px */
+@media (max-width: 768px) {
+}
+
+/* Media query for max-width 640px */
+@media (max-width: 640px) {
+  .reviews__title {
+    margin: 2rem 0 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.7rem;
+  }
+}

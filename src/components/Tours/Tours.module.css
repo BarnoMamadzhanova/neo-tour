@@ -38,3 +38,39 @@
   font-size: 1.125rem;
   line-height: 1.625rem;
 }
+
+/* Media query for max-width 7680px */
+@media (max-width: 768px) {
+  .tour h1 {
+    font-size: 3.5rem;
+    line-height: 4rem;
+    padding: 3rem 0 1rem 0;
+  }
+
+  .location {
+    margin-bottom: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+}
+
+/* Media query for max-width 640px */
+@media (max-width: 640px) {
+  .tour h1 {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    padding: 2.8rem 0 1rem 0;
+  }
+
+  .location {
+    margin-bottom: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+}

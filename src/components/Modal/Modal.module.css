@@ -30,3 +30,19 @@
 .modal__content.active {
   transform: scale(1);
 }
+
+/* Media query for max-width 640px */
+@media (max-width: 640px) {
+  .modal__content {
+    padding: 2rem;
+    width: 30rem;
+  }
+}
+
+/* Media query for max-width 500px */
+@media (max-width: 500px) {
+  .modal__content {
+    padding: 2rem;
+    width: 24rem;
+  }
+}

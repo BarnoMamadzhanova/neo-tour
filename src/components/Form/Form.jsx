@@ -43,20 +43,27 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
     setValue("participants", newValue);
   };
 
+  const handlePhoneNumberChange = (value) => {
+    if (value && value.length > 15) {
+      value = value.slice(0, 15);
+    }
+    setPhoneNumber(value);
+  };
+
   return (
     <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="phone_number" className={classes.input_phone}>
+      <label className={classes.input_phone}>
         Phone number
         <PhoneInput
           international
           defaultCountry="KG"
           value={phoneNumber}
-          onChange={(value) => setPhoneNumber(value)}
+          onChange={handlePhoneNumberChange}
           className={classes.phone_input}
           id="phone_number"
         />
       </label>
-      <label htmlFor="commentaries" className={classes.input_commentaries}>
+      <label className={classes.input_commentaries}>
         Commentaries to trip
         <input
           type="text"
@@ -65,7 +72,7 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
           {...register("commentaries")}
         />
       </label>
-      <label htmlFor="participants" className={classes.participants}>
+      <label className={classes.participants}>
         Number of participants
         <div className={classes.participant_controls}>
           <button

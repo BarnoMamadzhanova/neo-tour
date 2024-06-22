@@ -19,3 +19,17 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
+
+/* Media query for max-width 1100px */
+@media (max-width: 1100px) {
+  .container {
+    padding-inline: 5rem;
+  }
+}
+
+/* Media query for max-width 768px */
+@media (max-width: 768px) {
+  .container {
+    padding-inline: 3rem;
+  }
+}

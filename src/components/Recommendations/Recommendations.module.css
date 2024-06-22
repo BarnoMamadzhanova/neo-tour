@@ -1,6 +1,5 @@
 .card__box {
   position: relative;
-  /* margin: 2rem 0 3.75rem; */
   aspect-ratio: 1/1;
   border: 1px solid transparent;
   cursor: pointer;

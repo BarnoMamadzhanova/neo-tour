@@ -36,3 +36,19 @@
   line-height: 2.375rem;
   z-index: 2;
 }
+
+/* Media query for max-width 768px */
+@media (max-width: 768px) {
+  .slider__title_bg h3 {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+}
+
+/* Media query for max-width 500px */
+@media (max-width: 500px) {
+  .slider__title_bg h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}

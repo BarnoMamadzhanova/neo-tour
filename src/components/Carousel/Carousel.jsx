@@ -13,6 +13,17 @@ export const Carousel = forwardRef(({ slides, onSlideClick }, ref) => {
           modules={[Navigation, Pagination, A11y]}
           spaceBetween={24}
           slidesPerView={3}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            600: {
+              slidesPerView: 2,
+            },
+            800: {
+              slidesPerView: 3,
+            },
+          }}
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id} onClick={() => onSlideClick(slide.id)}>

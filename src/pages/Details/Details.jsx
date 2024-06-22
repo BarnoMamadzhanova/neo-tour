@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classes from "./Details.module.css";
 import { useParams, useNavigate } from "react-router-dom";
 import slides from "../../mock.json";
+import recommendations from "../../recommendations.json";
 import { Tours } from "../../components/Tours/Tours";
 import Reviews from "../../components/Reviews/Reviews";
 import reviews from "../../reviews.json";
@@ -13,9 +14,11 @@ import closeBtn from "../../assets/close.svg";
 function Details() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const tour = slides.find((slide) => slide.id === parseInt(id));
   const [modalActive, setModalActive] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  // Combine slides and recommendations
+  const allTours = [...slides, ...recommendations];
+  const tour = allTours.find((slide) => slide.id === parseInt(id));
 
   if (!tour) {
     return <div>Tour not found</div>;

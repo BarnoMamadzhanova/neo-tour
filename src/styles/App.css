@@ -6,9 +6,12 @@
 }
 
 .App {
-  font-size: 16px;
   margin: 0 auto;
   width: 100%;
+}
+
+html {
+  font-size: 16px;
 }
 
 @font-face {
@@ -37,4 +40,18 @@
   font-weight: 900; /* Black */
   src: local("Satoshi"),
     url(../fonts/Satoshi/Satoshi-Black.otf) format("opentype");
+}
+
+/* Media query for max-width 1100px */
+@media (max-width: 1100px) {
+  html {
+    font-size: 14px !important;
+  }
+}
+
+/* Media query for max-width 768px */
+@media (max-width: 768px) {
+  html {
+    font-size: 13px !important;
+  }
 }

@@ -10,28 +10,12 @@ import goBack from "../../assets/goBackBtn.svg";
 import Modal from "../../components/Modal/Modal";
 import Form from "../../components/Form/Form";
 import closeBtn from "../../assets/close.svg";
-// import api from "../../api";
 
 function Details() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [modalActive, setModalActive] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
-
-  //For data fetching
-  // const [tour, setTour] = useState(null);
-  // useEffect(() => {
-  //   const fetchTourData = async () => {
-  //     try {
-  //       const response = await api.get(`/tours/${id}`); // Replace with your actual endpoint
-  //       setTour(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching tour data', error);
-  //     }
-  //   };
-
-  //   fetchTourData();
-  // }, [id]);
 
   // Combine slides and recommendations
   const allTours = [...slides, ...recommendations];
@@ -75,7 +59,10 @@ function Details() {
 
       <div className={classes.container}>
         <Tours tour={tour} />
-        <Reviews reviews={tourReviews} />
+        <Reviews
+          reviews={tourReviews}
+          // tourId={tour.id}
+        />
         <button
           className={classes.booking__btn}
           onClick={() => setModalActive(true)}

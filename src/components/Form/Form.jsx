@@ -7,7 +7,7 @@ import user from "../../assets/user.svg";
 import useBookingId from "../../hooks/useBookingId";
 // import { submitBooking } from "../../api/apiPost";  if i get url
 
-function Form({ setActive, onSubmitSuccess, onSubmitError }) {
+function Form({ onSubmitSuccess, onSubmitError }) {
   const { register, handleSubmit, setValue, watch } = useForm({
     defaultValues: { participants: 1 },
   });

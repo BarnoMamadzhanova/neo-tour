@@ -93,7 +93,6 @@ function Details() {
                 </div>
 
                 <Form
-                  setActive={setModalActive}
                   onSubmitSuccess={handleBookingSuccess}
                   onSubmitError={handleBookingError}
                 />

@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# NeoTour
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+NeoTour is a web application designed to provide users with information about available tours, categorized for easy navigation, and offer personalized tour recommendations. Users can explore tour details, read reviews, and book tours directly from the platform.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- Features
+- Technologies Used
+- Setup and Installation
+- Usage
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Main Page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Tour Categories (Discover):
 
-### `npm test`
+- Categories are visually distinguished upon selection.
+- Tours in the selected category are displayed in a carousel format, allowing users to scroll through using arrows.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Recommended Tours:
 
-### `npm run build`
+- Displayed in a vertical list for easy browsing.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Interactive Elements:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Let’s Go! button smoothly scrolls the page down to the tours section.
+- Selecting a tour redirects to the detailed tour page with more comprehensive information.
+- Tour titles are highlighted with a darkened background for readability.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Detailed Tour Page
 
-### `npm run eject`
+Tour Information:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Displays the main information including photo, name, location, and description.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Reviews:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Users can scroll vertically to read reviews.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Navigation:
 
-## Learn More
+- Go Back button in the top left corner returns to the main page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Booking:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Book Now button opens a modal for booking details.
+- Dynamic counter for the number of people, with a minimum of 1 and a maximum of 6.
+- Mandatory phone number input field, with a pre-filled country code (+996).
+- Submission is only possible once the phone number is entered.
 
-### Code Splitting
+### Modals and Popups
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Booking Modal:
 
-### Analyzing the Bundle Size
+- Allows users to input booking information.
+- Plus and minus buttons dynamically update the number of people.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Notification Popup:
 
-### Making a Progressive Web App
+- Confirms booking submission and returns users to the main page upon clicking Ok.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Technologies Used
 
-### Advanced Configuration
+- React
+- React Router DOM
+- React Hooks
+- Axios
+- React Modal
+- React Phone Number Input
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Setup and Installation
 
-### Deployment
+1. Clone the Repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- git clone https://github.com/yourusername/neotour.git
+- cd neotour
 
-### `npm run build` fails to minify
+2. Install Dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- npm install
+
+3. Start the Development Server:
+
+- npm start
+
+4. Build for Production:
+
+- npm run build
+
+## Usage
+
+1. Main Page:
+
+- Browse tours by categories using the carousel.
+- Check out recommended tours in the vertical list.
+- Click on Let’s Go! to navigate to the tours section.
+
+2. Detailed Tour Page:
+
+- Review the detailed information and user reviews for the selected tour.
+- Use the Go Back button to return to the main page.
+- Click Book Now to initiate the booking process.
+
+3. Booking:
+
+- Input the number of people and phone number.
+- Submit the booking and receive a confirmation.

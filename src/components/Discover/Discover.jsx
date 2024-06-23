@@ -1,42 +1,45 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./Discover.module.css";
-import slides from "../../mock.json";
+// import slides from "../../mock.json";  for mock data
 import categories from "../../categories.json";
 import { Carousel } from "../Carousel/Carousel";
 import { Categories } from "../Categories/Categories";
 import prev from "../../assets/prevBtn.svg";
 import next from "../../assets/nextBtn.svg";
-// import { getDiscoverData } from "./api";
+import { getDiscoverData } from "../../api/api";
 
 function Discover() {
-  const [selectedCategory, setSelectedCategory] = useState(categories[0].path);
-  const [filteredSlides, setFilteredSlides] = useState([]);
+  // const [selectedCategory, setSelectedCategory] = useState(categories[0].path);
+  // const [filteredSlides, setFilteredSlides] = useState([]);
   const swiperRef = useRef(null);
   const navigate = useNavigate();
-  // const [discoverData, setDiscoverData] = useState([]);
+  const [discoverData, setDiscoverData] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
-  // Blueprint if i get api
-  // useEffect(() => {
-  //   const fetchDiscoverData = async () => {
-  //     try {
-  //      const discover = await getDiscoverData();
-  //      setDiscoverData(discover);
-  //     } catch (error) {
-  //       console.error("Error fetching discover data", error);
-  //     }
-  //   };
+  // Function for fetching data
 
-  //   fetchDiscoverData();
-  // }, []);
+  const fetchDiscoverData = async (category_name) => {
+    try {
+      const discover = await getDiscoverData(category_name, 1, 12);
+      setDiscoverData(discover.results);
+    } catch (error) {
+      console.error("Error fetching discover data", error);
+    }
+  };
 
   useEffect(() => {
-    // Filter slides based on the selected category
-    const filtered = slides.filter(
-      (slide) => slide.category === selectedCategory
-    );
-    setFilteredSlides(filtered);
+    fetchDiscoverData(selectedCategory);
   }, [selectedCategory]);
+
+  //Function for mock files
+  // Filter slides based on the selected category
+  // useEffect(() => {
+  //   const filtered = slides.filter(
+  //     (slide) => slide.category === selectedCategory
+  //   );
+  //   setFilteredSlides(filtered);
+  // }, [selectedCategory]);
 
   // Function to handle previous btn on slider
   const handlePrevClick = () => {
@@ -87,8 +90,8 @@ function Discover() {
         />
         <Carousel
           ref={swiperRef}
-          slides={filteredSlides}
-          // discoverData={discoverData}
+          // slides={filteredSlides}
+          slides={discoverData}
           onSlideClick={handleSlideClick}
         />
       </div>

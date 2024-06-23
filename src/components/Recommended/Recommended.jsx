@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Recommended.module.css";
 import { Recommendations } from "../Recommendations/Recommendations";
 import recommendations from "../../recommendations.json";
-// import { getRecommendedData } from "./api";
+// import { getRecommendedData } from "../../api/api";
 
 function Recommended() {
   //Functionality for fetching data
@@ -11,8 +11,8 @@ function Recommended() {
   // useEffect(() => {
   //   const fetchRecommendedData = async () => {
   //     try {
-  //      const recommended = await getRecommendedData();
-  //      setRecommendedData(recommended);
+  //       const recommended = await getRecommendedData();
+  //       setRecommendedData(recommended);
   //     } catch (error) {
   //       console.error("Error fetching recommended data", error);
   //     }

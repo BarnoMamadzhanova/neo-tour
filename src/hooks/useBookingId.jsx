@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
-const useBookingId = () => {
-  const [bookingId, setBookingId] = useState("");
+// const useBookingId = () => {
+//   const [bookingId, setBookingId] = useState("");
 
-  useEffect(() => {
-    const generateBookingId = () => {
-      return `BOOKING-${Date.now()}`;
-    };
+//   useEffect(() => {
+//     const generateBookingId = () => {
+//       return Date.now();
+//     };
 
-    setBookingId(generateBookingId());
-  }, []);
+//     setBookingId(generateBookingId());
+//   }, []);
 
-  return bookingId;
-};
+//   return bookingId;
+// };
 
-export default useBookingId;
+// export default useBookingId;

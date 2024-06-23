@@ -1,32 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Details.module.css";
 import { useParams, useNavigate } from "react-router-dom";
-import slides from "../../mock.json";
-import recommendations from "../../recommendations.json";
+// import slides from "../../mock.json";
+// import recommendations from "../../recommendations.json";
+// import reviews from "../../reviews.json";
 import { Tours } from "../../components/Tours/Tours";
 import Reviews from "../../components/Reviews/Reviews";
-import reviews from "../../reviews.json";
 import goBack from "../../assets/goBackBtn.svg";
 import Modal from "../../components/Modal/Modal";
 import Form from "../../components/Form/Form";
 import closeBtn from "../../assets/close.svg";
+import { getTourDetails } from "../../api/api";
 
 function Details() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [tour, setTour] = useState(null);
   const [modalActive, setModalActive] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
-  // Combine slides and recommendations
-  const allTours = [...slides, ...recommendations];
-  const tour = allTours.find((slide) => slide.id === parseInt(id));
+  // Combine slides and recommendations for mock data
+  // const allTours = [...slides, ...recommendations];
+  // const tour = allTours.find((slide) => slide.id === parseInt(id));
+
+  //Function for fetching data
+  useEffect(() => {
+    const fetchTourDetails = async () => {
+      try {
+        const tourData = await getTourDetails(id);
+        setTour(tourData);
+      } catch (error) {
+        console.error("Error fetching tour details", error);
+      }
+    };
+
+    fetchTourDetails();
+  }, [id]);
 
   if (!tour) {
     return <div>Tour not found</div>;
   }
 
-  // Filter reviews based on the tour ID
-  const tourReviews = reviews.filter((review) => review.id === tour.id);
+  // Filter reviews based on the tour ID for mock data
+  // const tourReviews = reviews.filter((review) => review.id === tour.id);
 
   const handleBookingSuccess = () => {
     setModalMessage("Your trip has been booked!");
@@ -60,8 +76,8 @@ function Details() {
       <div className={classes.container}>
         <Tours tour={tour} />
         <Reviews
-          reviews={tourReviews}
-          // tourId={tour.id}
+          // reviews={tourReviews}
+          reviews={tour.reviews}
         />
         <button
           className={classes.booking__btn}

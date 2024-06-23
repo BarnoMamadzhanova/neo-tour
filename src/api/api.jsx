@@ -1,16 +1,26 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://...",
+  baseURL: "https://pudge-backender.org.kg",
   headers: {
     "Content-Type": "application/json",
   },
 });
 
 // Function to get data for the discover section
-export const getDiscoverData = async () => {
+export const getDiscoverData = async (
+  category_name = "",
+  page = 1,
+  limit = 12
+) => {
   try {
-    const response = await api.get("/discover");
+    const response = await api.get("/tours-list/", {
+      params: {
+        category_name,
+        page,
+        limit,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error fetching discover data:", error);
@@ -19,12 +29,27 @@ export const getDiscoverData = async () => {
 };
 
 // Function to get data for the recommended section
-export const getRecommendedData = async () => {
+export const getRecommendedData = async (season = "") => {
   try {
-    const response = await api.get("/recommended");
+    const response = await api.get("/recommend-tours/", {
+      params: {
+        season,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error("Error fetching recommended data:", error);
+    throw error;
+  }
+};
+
+// Function to get tour details by ID
+export const getTourDetails = async (id) => {
+  try {
+    const response = await api.get(`/tour-detail/${id}/`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching tour details:", error);
     throw error;
   }
 };

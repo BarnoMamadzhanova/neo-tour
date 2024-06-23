@@ -4,8 +4,8 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import classes from "./Form.module.css";
 import user from "../../assets/user.svg";
-import useBookingId from "../../hooks/useBookingId";
-// import { submitBooking } from "../../api/apiPost";  if i get url
+// import useBookingId from "../../hooks/useBookingId";
+import { submitBooking } from "../../api/apiPost";
 
 function Form({ onSubmitSuccess, onSubmitError }) {
   const { register, handleSubmit, setValue, watch } = useForm({
@@ -13,23 +13,29 @@ function Form({ onSubmitSuccess, onSubmitError }) {
   });
   const [phoneNumber, setPhoneNumber] = useState("");
   const participants = watch("participants", 1);
-  const bookingId = useBookingId();
+  const bookingId = 1;
 
-  const onSubmit = (data) => {
-    console.log({ ...data, phone_number: phoneNumber, booking_id: bookingId });
-    onSubmitSuccess();
-    // onSubmitError();
-  };
+  // const onSubmit = (data) => {
+  //   console.log({ ...data, phone_number: phoneNumber, booking_id: bookingId });
+  //   onSubmitSuccess();
+  //   onSubmitError();
+  // };
 
   // Function for passing data to backend
-  // const onSubmit = async (data) => {
-  //   try {
-  //     await submitBooking({ ...data, phone_number: phoneNumber, booking_id: bookingId });
-  //     onSubmitSuccess();
-  //   } catch (error) {
-  //     onSubmitError();
-  //   }
-  // };
+  const onSubmit = async (data) => {
+    try {
+      await submitBooking({
+        tour: bookingId,
+        num_people: data.participants,
+        phone_number: phoneNumber,
+        additional_comments: data.commentaries,
+      });
+      onSubmitSuccess();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      onSubmitError();
+    }
+  };
 
   const handleParticipantsChange = (increment) => {
     const newValue = increment

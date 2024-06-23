@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-// import axios from "axios";
 import classes from "./Form.module.css";
 import user from "../../assets/user.svg";
 import useBookingId from "../../hooks/useBookingId";
+// import { submitBooking } from "../../api/apiPost";  if i get url
 
 function Form({ setActive, onSubmitSuccess, onSubmitError }) {
   const { register, handleSubmit, setValue, watch } = useForm({
@@ -21,20 +21,15 @@ function Form({ setActive, onSubmitSuccess, onSubmitError }) {
     // onSubmitError();
   };
 
-  //   const onSubmit = (data) => {
-  //     axios
-  //       .post("https://..., {
-  //         ...data,
-  //         phone_number: phoneNumber,
-  //         booking_id: bookingId,
-  //       })
-  //       .then((response) => {
-  //         onSubmitSuccess();
-  //       })
-  //       .catch((error) => {
-  //         onSubmitError();
-  //       });
-  //   };
+  // Function for passing data to backend
+  // const onSubmit = async (data) => {
+  //   try {
+  //     await submitBooking({ ...data, phone_number: phoneNumber, booking_id: bookingId });
+  //     onSubmitSuccess();
+  //   } catch (error) {
+  //     onSubmitError();
+  //   }
+  // };
 
   const handleParticipantsChange = (increment) => {
     const newValue = increment

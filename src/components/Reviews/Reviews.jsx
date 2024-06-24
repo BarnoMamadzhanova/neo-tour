@@ -34,10 +34,10 @@ export const Reviews = ({ reviews }) => {
             {reviews.map((review) => (
               <div key={review.id} className={classes.user__info}>
                 <div className={classes.user__flex}>
-                  <img src={review.userFoto} alt={review.userName} />
-                  <h6>{review.userName}</h6>
+                  <img src={review.photo} alt={review.nickname} />
+                  <h6>{review.nickname}</h6>
                 </div>
-                <p>{review.text}</p>
+                <p>{review.review}</p>
               </div>
             ))}
           </div>
